@@ -1,0 +1,39 @@
+GDRE Tools v0.5.3
+Windows 10.0.22621, NVIDIA GeForce GTX 745/PCIe/SSE2, opengl3
+Extracted 192 files, no errors detected!
+USER WARNING: Converting lossy imports, you may lose fidelity for indicated assets when re-importing upon loading the project
+   at: ImportExporter::_export_imports (modules\gdsdecomp\utility\import_exporter.cpp:55)
+Script version 3.3.x (rev 0x5565f55) detected
+Saved project config to C:/Users/bened/Desktop/Ravage Recover/project.godot
+Saved project config to C:/Users/bened/Desktop/Ravage Recover/project.godot
+
+
+********************************EXPORT REPORT********************************
+
+Totals:                                 
+Decompiled scripts:                     17
+Failed scripts:                         0
+Imported resources for export session:  192
+Successfully converted:                 64
+Lossy:                                  1
+Rewrote metadata:                       0
+Non-importable conversions:             0
+Not converted:                          0
+Failed conversions:                     0
+-------------
+
+
+The following files were converted from an import that was stored lossy.
+You may lose fidelity when re-importing these files upon loading the project.
+res://.import/Stage_Vulcano.jpg-1455c0ea7eaf2f3dec988d475144ff40.stex to res://Texture/Maps/Stage_Vulcano.jpg
+
+
+------------------------------------------------------------------------------------
+
+Use Godot editor version 3.3 to edit the project.
+Note: the project may be using a custom version of Godot. Detection for this has not been implemented yet.
+If you find that you have many non-import errors upon opening the project 
+(i.e. scripts or shaders have many errors), use the original game's binary as the export template.
+
+*******************************************************************************
+

@@ -1,0 +1,777 @@
+[gd_scene load_steps=58 format=2]
+
+[ext_resource path="res://Scripts/UI.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/World.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Enemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://SFX/Glock 17.wav" type="AudioStream" id=5]
+[ext_resource path="res://Texture/Players/Jackal/Jackal.png" type="Texture" id=6]
+[ext_resource path="res://Texture/Guns/Glock_17.png" type="Texture" id=7]
+[ext_resource path="res://Texture/Maps/Wood.png" type="Texture" id=8]
+[ext_resource path="res://Senza titolo-1.png" type="Texture" id=9]
+[ext_resource path="res://SFX/horrorambiance3.mp3" type="AudioStream" id=10]
+[ext_resource path="res://FONTS/Ghastly Panic.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://Texture/Guns/Doppietta_a_canne_mozze.png" type="Texture" id=12]
+[ext_resource path="res://SFX/Shotgun Sound Effects.wav" type="AudioStream" id=13]
+[ext_resource path="res://SFX/SMG Gun Sound Effect.wav" type="AudioStream" id=14]
+[ext_resource path="res://Texture/Guns/Mac101.png" type="Texture" id=15]
+[ext_resource path="res://Texture/Blood/cuore.png" type="Texture" id=16]
+[ext_resource path="res://Texture/UI/Gold_face.png" type="Texture" id=17]
+[ext_resource path="res://SFX/footstep.wav" type="AudioStream" id=18]
+[ext_resource path="res://SFX/strart.wav" type="AudioStream" id=19]
+[ext_resource path="res://Texture/Players/Jackal/Jackal_2_Hand.png" type="Texture" id=20]
+[ext_resource path="res://Texture/Jet_F35.png" type="Texture" id=21]
+[ext_resource path="res://Texture/Freccia_estrazione.png" type="Texture" id=22]
+[ext_resource path="res://SFX/jet.wav" type="AudioStream" id=23]
+[ext_resource path="res://Texture/Maps/Stage_Vulcano.jpg" type="Texture" id=24]
+[ext_resource path="res://Scenes/Enemy2.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Scenes/Enemy6.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Scenes/Enemy5.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Scenes/Enemy3.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Scenes/Enemy4.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Texture/Guns/XM4.png" type="Texture" id=30]
+[ext_resource path="res://SFX/xm4.wav" type="AudioStream" id=31]
+[ext_resource path="res://Texture/Guns/Crossbow.png" type="Texture" id=32]
+[ext_resource path="res://SFX/balestra.wav" type="AudioStream" id=33]
+[ext_resource path="res://Texture/Players/Blake/Blake.png" type="Texture" id=34]
+[ext_resource path="res://Texture/Players/Blake/Blake_2_Hands.png" type="Texture" id=35]
+[ext_resource path="res://Texture/Maps/Bridge_to_Alcatraz_Island.png" type="Texture" id=36]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 25.3335
+
+[sub_resource type="Animation" id=2]
+resource_name = "glock"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Glock_17:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 25.313, 18.364 ), Vector2( 20.419, 18.364 ), Vector2( 25.313, 18.364 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Pompa"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Doppietta_a_canne_mozze:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 26.5303, 19.7936 ), Vector2( 23.578, 19.794 ), Vector2( 26.53, 19.794 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Mac"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Mac101:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 16.0482, 16.3583 ), Vector2( 13.75, 16.358 ), Vector2( 16.048, 16.358 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "xm4"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("XM4:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 18.1798, 14.0927 ), Vector2( 14.1799, 14.0928 ), Vector2( 18.1799, 14.0928 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "crossbow"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Crossbow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 23.5828, 17.8042 ), Vector2( 19.5828, 17.8042 ), Vector2( 23.5828, 17.8042 ) ]
+}
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 23.7494
+
+[sub_resource type="DynamicFont" id=8]
+size = 150
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_char = 10
+font_data = ExtResource( 11 )
+
+[sub_resource type="Animation" id=9]
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Jet_F35:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 938.713, 3898.42 ), Vector2( 938.713, -3765.57 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ESTRAZIONE/neroEstrazione:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7, 1.2, 1.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0.372549 ), Color( 0, 0, 0, 0.784314 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 1946.32, 10 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 1951.67, 16.8045 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 100
+outline_size = 5
+outline_color = Color( 0.270588, 0.2, 0.0235294, 1 )
+use_filter = true
+extra_spacing_char = 10
+font_data = ExtResource( 11 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 1, 0, 0, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.270588, 0, 0, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=16]
+size = 500
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 11 )
+
+[sub_resource type="Animation" id=17]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Layer/UI/Died:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.215686 ), Color( 1, 1, 1, 0.509804 ), Color( 1, 1, 1, 0.752941 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=18]
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.392157 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Gradient" id=19]
+colors = PoolColorArray( 0.995117, 0.355677, 0, 1, 1, 0, 0, 1 )
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 21.9567, 1941.61 )
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 108.098, 100.132 )
+
+[node name="World" type="Node2D"]
+script = ExtResource( 3 )
+zombies = [ ExtResource( 4 ), ExtResource( 25 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 27 ), ExtResource( 26 ) ]
+
+[node name="Player" type="KinematicBody2D" parent="." groups=["Player"]]
+position = Vector2( 301.135, 328.995 )
+script = ExtResource( 2 )
+
+[node name="Muzzle" type="Position2D" parent="Player"]
+position = Vector2( 38.5158, 15.4446 )
+
+[node name="Delay" type="Timer" parent="Player"]
+autostart = true
+
+[node name="GunShot" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource( 5 )
+volume_db = -10.0
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+scale = Vector2( 1.0088, 1.01734 )
+current = true
+zoom = Vector2( 0.6, 0.6 )
+limit_left = 0
+limit_top = 0
+limit_right = 1920
+limit_bottom = 1080
+editor_draw_limits = true
+
+[node name="Area2D" type="Area2D" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
+shape = SubResource( 1 )
+
+[node name="Laser" type="Light2D" parent="Player"]
+position = Vector2( 107.54, 15.5742 )
+scale = Vector2( 0.320659, 0.00536692 )
+z_index = -1
+texture = ExtResource( 9 )
+color = Color( 0.984314, 0, 0, 1 )
+energy = 2.0
+
+[node name="Shotgun" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource( 13 )
+volume_db = -15.0
+
+[node name="Mac" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource( 14 )
+volume_db = -5.0
+
+[node name="Guns" type="Node2D" parent="Player"]
+
+[node name="Glock_17" type="Sprite" parent="Player/Guns"]
+visible = false
+position = Vector2( 25.313, 18.364 )
+rotation = 1.5708
+scale = Vector2( 0.04, 0.0470791 )
+texture = ExtResource( 7 )
+
+[node name="Doppietta_a_canne_mozze" type="Sprite" parent="Player/Guns"]
+visible = false
+position = Vector2( 26.53, 19.794 )
+rotation = 1.5708
+scale = Vector2( 0.0438091, 0.0690151 )
+z_index = 1
+texture = ExtResource( 12 )
+
+[node name="Mac101" type="Sprite" parent="Player/Guns"]
+visible = false
+position = Vector2( 16.048, 16.358 )
+rotation = 1.5708
+scale = Vector2( 0.0437936, 0.0620437 )
+z_index = 1
+texture = ExtResource( 15 )
+
+[node name="GlockAnim" type="AnimationPlayer" parent="Player/Guns"]
+anims/glock = SubResource( 2 )
+
+[node name="DoppiettaAnim" type="AnimationPlayer" parent="Player/Guns"]
+anims/Pompa = SubResource( 3 )
+
+[node name="MacAnim" type="AnimationPlayer" parent="Player/Guns"]
+anims/Mac = SubResource( 4 )
+
+[node name="XM4" type="Sprite" parent="Player/Guns"]
+visible = false
+position = Vector2( 18.1799, 14.0928 )
+rotation = 1.5708
+scale = Vector2( 0.0586723, 0.0727605 )
+z_index = 2
+texture = ExtResource( 30 )
+
+[node name="Xm4Anim" type="AnimationPlayer" parent="Player/Guns"]
+anims/xm4 = SubResource( 5 )
+
+[node name="Crossbow" type="Sprite" parent="Player/Guns"]
+visible = false
+position = Vector2( 23.5828, 17.8042 )
+rotation = 1.5708
+scale = Vector2( 0.09, 0.09 )
+texture = ExtResource( 32 )
+
+[node name="CrossbowAnim" type="AnimationPlayer" parent="Player/Guns"]
+anims/crossbow = SubResource( 6 )
+
+[node name="Players" type="Node2D" parent="Player"]
+
+[node name="Jackal" type="Sprite" parent="Player/Players"]
+visible = false
+scale = Vector2( 0.3, 0.3 )
+z_index = -1
+texture = ExtResource( 6 )
+
+[node name="Jackal_2_Hand" type="Sprite" parent="Player/Players"]
+visible = false
+position = Vector2( 8.00281, -0.747742 )
+scale = Vector2( 0.3, 0.308617 )
+texture = ExtResource( 20 )
+
+[node name="Blake" type="Sprite" parent="Player/Players"]
+visible = false
+position = Vector2( 0.614233, 0.997275 )
+scale = Vector2( 0.3, 0.3 )
+z_index = -1
+texture = ExtResource( 34 )
+
+[node name="Blake_2_Hands" type="Sprite" parent="Player/Players"]
+visible = false
+position = Vector2( 3.74695, -1.74377 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 35 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource( 7 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Player"]
+
+[node name="extraction" type="Label" parent="Player/CanvasLayer"]
+visible = false
+margin_left = 11.0
+margin_top = 819.0
+margin_right = 1912.0
+margin_bottom = 1063.0
+custom_fonts/font = SubResource( 8 )
+text = "Call the jet [E]"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="JetEstrazione" type="AnimationPlayer" parent="Player"]
+anims/jet = SubResource( 9 )
+
+[node name="jetSound" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource( 23 )
+volume_db = -5.0
+
+[node name="EstrazioneCompletata" type="AnimationPlayer" parent="Player"]
+anims/neroestrazione = SubResource( 10 )
+
+[node name="ESTRAZIONE" type="CanvasLayer" parent="Player"]
+layer = 128
+
+[node name="neroEstrazione" type="ColorRect" parent="Player/ESTRAZIONE"]
+margin_left = -1019.45
+margin_top = -580.583
+margin_right = 2911.55
+margin_bottom = 1685.42
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="xm4" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource( 31 )
+volume_db = -10.0
+
+[node name="balestra" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource( 33 )
+
+[node name="FootstepERBA" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource( 18 )
+
+[node name="FootstepsTimer" type="Timer" parent="Player/FootstepERBA"]
+wait_time = 0.35
+autostart = true
+
+[node name="Enemy" parent="." instance=ExtResource( 4 )]
+position = Vector2( 952.386, 889.832 )
+
+[node name="Enviroment" type="Node2D" parent="."]
+z_index = 1
+
+[node name="SpawnRate" type="Timer" parent="Enviroment"]
+wait_time = 8.0
+autostart = true
+
+[node name="Spawn2" type="Position2D" parent="Enviroment"]
+position = Vector2( 48.6584, 47.037 )
+
+[node name="Spawn3" type="Position2D" parent="Enviroment"]
+position = Vector2( 980.434, 1030.29 )
+
+[node name="SpawnRate2" type="Timer" parent="Enviroment"]
+wait_time = 12.0
+autostart = true
+
+[node name="SpawnRate3" type="Timer" parent="Enviroment"]
+wait_time = 10.0
+autostart = true
+
+[node name="Spawn1" type="Position2D" parent="Enviroment"]
+position = Vector2( 1830.91, 56.7432 )
+
+[node name="CollisianiAndAltro" type="Node2D" parent="Enviroment"]
+
+[node name="Confini" type="StaticBody2D" parent="Enviroment"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/Confini"]
+shape = SubResource( 11 )
+
+[node name="Area2D" type="Area2D" parent="Enviroment/Confini/CollisionShape2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/Confini/CollisionShape2D/Area2D"]
+shape = SubResource( 12 )
+
+[node name="Confini3" type="StaticBody2D" parent="Enviroment"]
+position = Vector2( -5.33936, 517.918 )
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/Confini3"]
+shape = SubResource( 11 )
+
+[node name="Area2D" type="Area2D" parent="Enviroment/Confini3/CollisionShape2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/Confini3/CollisionShape2D/Area2D"]
+shape = SubResource( 12 )
+
+[node name="Confini4" type="StaticBody2D" parent="Enviroment"]
+position = Vector2( 1930.18, 533.936 )
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/Confini4"]
+shape = SubResource( 11 )
+
+[node name="Area2D" type="Area2D" parent="Enviroment/Confini4/CollisionShape2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/Confini4/CollisionShape2D/Area2D"]
+shape = SubResource( 12 )
+
+[node name="Confini2" type="StaticBody2D" parent="Enviroment"]
+position = Vector2( 676.667, 1080.66 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/Confini2"]
+shape = SubResource( 11 )
+
+[node name="Area2D" type="Area2D" parent="Enviroment/Confini2/CollisionShape2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/Confini2/CollisionShape2D/Area2D"]
+shape = SubResource( 12 )
+
+[node name="ColorRect" type="ColorRect" parent="Enviroment"]
+margin_left = -4491.0
+margin_top = -1.56128
+margin_right = -3.00195
+margin_bottom = 1081.44
+color = Color( 0.0117647, 0.0117647, 0.0117647, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="Enviroment"]
+margin_left = 1918.25
+margin_top = -1.17151
+margin_right = 6406.25
+margin_bottom = 1081.83
+color = Color( 0.0117647, 0.0117647, 0.0117647, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="Enviroment"]
+margin_left = -4498.0
+margin_top = 1081.0
+margin_right = 6406.0
+margin_bottom = 3605.0
+color = Color( 0.0117647, 0.0117647, 0.0117647, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect4" type="ColorRect" parent="Enviroment"]
+margin_left = -4497.0
+margin_top = -2524.0
+margin_right = 6407.0
+color = Color( 0.0117647, 0.0117647, 0.0117647, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Layer" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="UI" type="Control" parent="Layer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="Layer/UI"]
+margin_left = 105.0
+margin_top = 865.0
+margin_right = 599.0
+margin_bottom = 985.0
+custom_colors/font_color = Color( 0.901961, 0.713726, 0.243137, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "1234567890"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LifeBar" type="ProgressBar" parent="Layer/UI"]
+margin_left = 94.3274
+margin_top = 1008.51
+margin_right = 323.327
+margin_bottom = 1042.51
+custom_styles/fg = SubResource( 14 )
+custom_styles/bg = SubResource( 15 )
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Died" type="Label" parent="Layer/UI"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0.729412, 0, 0, 1 )
+custom_fonts/font = SubResource( 16 )
+text = "You Died"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cuore" type="Sprite" parent="Layer/UI"]
+position = Vector2( 50.81, 1025.66 )
+scale = Vector2( 0.148582, 0.140182 )
+texture = ExtResource( 16 )
+
+[node name="puntiIcon" type="Sprite" parent="Layer/UI"]
+position = Vector2( 52.6052, 909.538 )
+scale = Vector2( 0.5, 0.504757 )
+texture = ExtResource( 17 )
+
+[node name="DeathBlack" type="Node2D" parent="Layer"]
+visible = false
+z_index = -1
+
+[node name="ColorRect" type="ColorRect" parent="Layer/DeathBlack"]
+margin_right = 1930.0
+margin_bottom = 1080.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Nebbia" type="ColorRect" parent="."]
+margin_left = -1472.0
+margin_top = -1054.0
+margin_right = 3465.0
+margin_bottom = 2065.0
+color = Color( 0, 0, 0, 0.509804 )
+
+[node name="BackroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -20.0
+
+[node name="Restart" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Dead = SubResource( 17 )
+
+[node name="StartSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
+volume_db = -10.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+margin_left = -5774.8
+margin_top = -4575.11
+margin_right = 7557.2
+margin_bottom = 3573.89
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start" type="AnimationPlayer" parent="."]
+anims/start = SubResource( 18 )
+
+[node name="Jet_F35" type="Sprite" parent="."]
+position = Vector2( 938.713, 3898.42 )
+rotation = 1.5708
+scale = Vector2( 2.5, 2.5 )
+z_index = 1
+texture = ExtResource( 21 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Jet_F35"]
+position = Vector2( 436.228, -16.2971 )
+rotation = -1.5708
+scale = Vector2( 10, 10 )
+amount = 200
+emission_shape = 1
+emission_sphere_radius = 2.0
+direction = Vector2( 1, 5 )
+spread = 19.83
+scale_amount = 2.0
+color_ramp = SubResource( 19 )
+
+[node name="Light2D" type="Light2D" parent="Jet_F35"]
+position = Vector2( 771.999, -11.3393 )
+scale = Vector2( 1.73208, 1.04536 )
+texture = ExtResource( 9 )
+
+[node name="Sparire" type="Area2D" parent="Jet_F35"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jet_F35/Sparire"]
+position = Vector2( 241.071, -24.9805 )
+shape = SubResource( 20 )
+
+[node name="Freccia_estrazione" type="Sprite" parent="."]
+position = Vector2( 895.408, 355.307 )
+scale = Vector2( 0.308038, 0.374132 )
+z_index = -10
+texture = ExtResource( 22 )
+
+[node name="Estrazione" type="Area2D" parent="Freccia_estrazione" groups=["estrazione"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Freccia_estrazione/Estrazione"]
+position = Vector2( 82.2457, -79.3028 )
+shape = SubResource( 21 )
+
+[node name="Wood" type="Sprite" parent="."]
+visible = false
+position = Vector2( 961.549, 537.198 )
+scale = Vector2( 1.00686, 1.00826 )
+z_index = -200
+texture = ExtResource( 8 )
+
+[node name="lentezza" type="Area2D" parent="Wood" groups=["estrazione"]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wood/lentezza"]
+polygon = PoolVector2Array( -940.741, 44.7191, -885.26, 61.5506, -816.435, 62.9532, -782.726, 67.8624, -777.81, 83.9927, -772.893, 105.733, -771.489, 142.202, -770.084, 168.15, -770.084, 202.515, -800.283, 210.93, -829.779, 221.45, -855.764, 231.97, -884.557, 241.788, -912.649, 248.801, -947.061, 253.711 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Wood/lentezza"]
+polygon = PoolVector2Array( -563.119, 56.9046, -518.925, 57.9554, -495.775, 65.3109, -458.947, 75.8187, -411.596, 82.1234, -357.931, 75.8187, -331.625, 73.7172, -269.543, 70.5647, -140.117, 72.6663, -104.34, 73.7172, -71.7207, 74.7679, 0.884216, 75.8187, 68.228, 77.9202, 134.519, 72.6663, 210.281, 72.6663, 280.781, 75.8187, 350.229, 77.9202, 358.647, 78.971, 364.961, 122.053, 353.386, 143.069, 349.177, 161.983, 353.386, 179.846, 369.17, 191.405, 371.274, 202.964, 303.931, 210.319, 225.012, 210.319, 149.251, 212.421, 64.0189, 208.217, 6.14545, 211.37, -52.7803, 220.827, -123.281, 221.878, -186.415, 223.979, -251.654, 225.03, -308.476, 233.436, -355.827, 240.792, -401.073, 244.995, -445.267, 248.147, -502.089, 229.233, -546.283, 216.624, -566.276, 207.167 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Wood/lentezza"]
+polygon = PoolVector2Array( 553.19, 86.5832, 634.291, 87.3262, 711.672, 81.3821, 769.708, 68.7509, 806.911, 56.1196, 848.578, 43.4883, 900.661, 38.2871, 944.56, 36.0581, 944.56, 235.93, 879.084, 234.443, 824.768, 228.499, 791.286, 225.527, 751.107, 225.527, 725.065, 223.298, 688.607, 216.611, 662.565, 218.84, 619.41, 213.639, 566.583, 213.639, 565.095, 142.309, 564.351, 133.393, 556.166, 131.164 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Wood/lentezza"]
+position = Vector2( 0, -1.66797 )
+polygon = PoolVector2Array( -943.76, -454.091, -642.705, -446.878, -380.463, -456.886, -220.924, -468.244, -112.262, -470.603, 71.9902, -458.809, 211.36, -461.168, 371.991, -449.373, 556.243, -456.45, 761.755, -456.45, 941.283, -458.809, 943.645, -524.859, -946.122, -531.935 )
+
+[node name="LavaBath" type="Sprite" parent="."]
+visible = false
+position = Vector2( 959.897, 540.567 )
+scale = Vector2( 2.19204, 1.63215 )
+z_index = -250
+texture = ExtResource( 24 )
+
+[node name="Light2D" type="Light2D" parent="LavaBath"]
+position = Vector2( 109.363, -21.7693 )
+scale = Vector2( 3.58876, 2.68691 )
+texture = ExtResource( 9 )
+color = Color( 1, 0.376471, 0, 1 )
+energy = 0.6
+
+[node name="Lava" type="Area2D" parent="LavaBath" groups=["estrazione"]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LavaBath/Lava"]
+polygon = PoolVector2Array( -130.903, -52.3829, -74.8373, -90.0319, 56.6265, -82.2424, 106.892, -89.3828, 192.923, -111.453, 176.007, -79.646, 177.941, -73.1548, 286.688, -69.9091, 201.14, -50.4355, 207.423, -24.4707, 118.009, -10.19, 30.5271, 48.2309, 9.26086, 51.4765, -22.6384, 40.4414, -111.087, 52.1256, -118.82, -15.383 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="LavaBath/Lava"]
+polygon = PoolVector2Array( -431.679, -8.45563, -382.864, 6.47418, -302.149, -11.0521, -303.599, -1.31528, -306.982, 0.63205, -304.565, 25.2987, -308.432, 32.439, -304.565, 64.2459, -304.565, 73.3336, -320.032, 77.2284, -318.582, 108.386, -347.098, 90.8599, -390.597, 86.316, -435.063, 101.246 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="LavaBath/Lava"]
+polygon = PoolVector2Array( 349.442, -125.119, 435.571, -152.846, 436.538, -51.9018, 384.926, -33.7058, 377.506, -61.8662, 387.829, -62.7327, 405.893, -92.626, 345.893, -99.1245 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="LavaBath/Lava"]
+polygon = PoolVector2Array( -309.592, 113.147, -235.003, 137.462, -174.897, 165.667, -148.827, 194.844, -112.618, 211.378, -78.5827, 222.077, -41.6502, 236.665, -11.9594, 228.885, 30.7664, 212.351, 78.5614, 189.009, 129.977, 162.749, 179.22, 147.188, 216.877, 138.434, 248.74, 101.476, 274.086, 62.573, 276.983, 47.0117, 235.705, 42.1488, 225.567, 64.5182, 208.187, 104.394, 166.185, 121.901, 131.426, 132.599, 80.7339, 153.996, 49.5947, 170.53, -29.3394, 206.515, -74.2377, 198.735, -103.928, 178.31, -137.24, 159.831, -172, 138.434, -217.623, 119.955, -252.383, 108.284 )
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="LavaBath/Lava"]
+polygon = PoolVector2Array( -218.748, -240.446, -194.635, -238.711, -182.578, -233.507, -177.842, -224.832, -169.66, -215.001, -160.187, -209.218, -163.202, -198.809, -172.244, -194.761, -183.87, -196.495, -205.4, -198.23, -226.499, -208.061, -230.804, -217.893, -229.082, -230.037 )
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="LavaBath/Lava"]
+polygon = PoolVector2Array( 39.9622, -144.514, 55.8938, -150.35, 71.1013, -149.377, 88.1192, -153.267, 97.1714, -158.13, 106.585, -166.397, 117.086, -166.883, 125.052, -163.966, 129.397, -154.24, 137.363, -148.891, 135.552, -140.624, 128.673, -134.302, 107.672, -127.98, 92.4643, -128.466, 62.4113, -126.521, 42.8589, -124.576, 33.8068, -127.494, 35.6172, -135.761 )
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="LavaBath/Lava"]
+polygon = PoolVector2Array( 340.68, -320.128, 343.932, -303.207, 353.686, -293.928, 358.157, -284.103, 354.499, -266.636, 353.686, -246.439, 349.215, -229.518, 350.841, -218.601, 360.595, -216.964, 367.911, -215.326, 376.446, -228.426, 378.884, -238.798, 380.51, -251.898, 381.323, -268.273, 380.104, -286.832, 382.136, -296.111, 386.2, -280.282, 388.639, -268.819, 395.954, -257.902, 401.644, -258.994, 405.302, -263.36, 407.741, -273.186, 408.553, -294.474, 404.489, -309.211, 400.018, -318.491 )
+
+[node name="Timer" type="Timer" parent="LavaBath"]
+wait_time = 0.5
+one_shot = true
+
+[node name="Bridge_to_Alcatraz_Island" type="Sprite" parent="."]
+visible = false
+position = Vector2( 960.805, 543.065 )
+scale = Vector2( 0.994937, 0.99649 )
+z_index = -200
+texture = ExtResource( 36 )
+
+[node name="Light2D" type="Light2D" parent="Bridge_to_Alcatraz_Island"]
+position = Vector2( 368.237, -286.447 )
+scale = Vector2( 4.29931, 2.42266 )
+texture = ExtResource( 9 )
+
+[node name="DamagePlayer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="Player/Delay" to="Player" method="_on_Timer_timeout"]
+[connection signal="body_entered" from="Player/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Player/Area2D" to="." method="_on_Area2D_body_exited"]
+[connection signal="animation_finished" from="Player/EstrazioneCompletata" to="Player" method="_on_EstrazioneCompletata_animation_finished"]
+[connection signal="timeout" from="Player/FootstepERBA/FootstepsTimer" to="Player" method="_on_FootstepsTimer_timeout"]
+[connection signal="timeout" from="Enviroment/SpawnRate" to="." method="_on_SpawnRate_timeout"]
+[connection signal="timeout" from="Enviroment/SpawnRate2" to="." method="_on_SpawnRate2_timeout"]
+[connection signal="timeout" from="Enviroment/SpawnRate3" to="." method="_on_SpawnRate3_timeout"]
+[connection signal="timeout" from="Restart" to="." method="_on_Restart_timeout"]
+[connection signal="body_entered" from="Jet_F35/Sparire" to="Player" method="_on_Sparire_body_entered"]
+[connection signal="body_entered" from="Freccia_estrazione/Estrazione" to="Player" method="_on_Estrazione_body_entered"]
+[connection signal="body_exited" from="Freccia_estrazione/Estrazione" to="Player" method="_on_Estrazione_body_exited"]
+[connection signal="body_entered" from="Wood/lentezza" to="Player" method="_on_lentezza_body_entered"]
+[connection signal="body_exited" from="Wood/lentezza" to="Player" method="_on_lentezza_body_exited"]
+[connection signal="body_entered" from="LavaBath/Lava" to="." method="_on_Lava_body_entered"]
+[connection signal="body_exited" from="LavaBath/Lava" to="." method="_on_Lava_body_exited"]
+[connection signal="timeout" from="LavaBath/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="DamagePlayer" to="." method="_on_DamagePlayer_timeout"]
